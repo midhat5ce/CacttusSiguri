@@ -21,6 +21,7 @@ public class Main{
             44, 49, 39, 56, 34, 53,
             46, 42, 50, 36, 29, 32
             };
+    private static byte[] round = {1,1,2,2,2,2,2,2,1,2,2,2,2,2,2,1};
     
     public static byte[] Permute(byte[] key, byte[] table)
     {
@@ -34,8 +35,30 @@ public class Main{
     
         return permuted;
     };
+ 
+    public static byte[] byteShift(byte[] arr,int a){
+          byte temp1 = arr[0];
+          byte temp2 = arr[1];
+          byte[] shiftedArr = new byte[28];
 
-    
+          for(int i=0;i<27;i++) {
+              if(a ==1) {
+                  shiftedArr[i] = arr[i+1];
+              }else if(a ==2) {
+                  if(i ==26 ) continue;
+                  shiftedArr[i] = arr[i+2];
+              }
+
+          }
+          if(a ==1) {
+              shiftedArr[27] = temp1;
+          }else {
+              shiftedArr[26] = temp1;
+              shiftedArr[27] = temp2;
+          }
+
+          return shiftedArr;
+      } 
 
   }
 }
