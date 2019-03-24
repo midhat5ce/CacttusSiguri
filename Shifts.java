@@ -69,5 +69,19 @@ public static byte[] concatFunc(byte[] left, byte[]right)
     return concat;
 }
 
+public static void Print(byte[] arr) 
+{
+        
+        for(int i=0;i<arr.length;i++) 
+                {       if(i%6==0)
+                            System.out.print("\t");
+                        else;
+                    
+                
+            System.out.print(arr[i]);
+        }
+                System.out.println("");
+}
+
     
 }

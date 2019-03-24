@@ -29,6 +29,8 @@ public class Main{
         
         byte[] _56key = shift.concatFunc(left, right);
         byte[] _48key = perm.Permute(_56key, perm.compressionPermutation);
+        System.out.print( "Subkey no."+ (i+1)+": ");
+        shift.Print(_48key);
     }
   }
 }
