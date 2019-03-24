@@ -1,6 +1,7 @@
 import java.util.HashMap;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Scanner;
 
 
 public class Main{
@@ -11,13 +12,17 @@ public class Main{
     byte[] left;
     byte[] right;
 
-    byte[] input = {0,0,0,1,0,0,1,1,0,0,1,1,0,1,0,0, 0,1,0,1,0,1,1,1, 0,1,1,1,1,0,0,1
-                    ,1,0,0,1,1,0,1,1, 1,0,1,1,1,1,0,0, 1,1,0,1,1,1,1,1, 1,1,1,1,0,0,0,1};
+    // byte[] input = {0,0,0,1,0,0,1,1,0,0,1,1,0,1,0,0, 0,1,0,1,0,1,1,1, 0,1,1,1,1,0,0,1
+    //                 ,1,0,0,1,1,0,1,1, 1,0,1,1,1,1,0,0, 1,1,0,1,1,1,1,1, 1,1,1,1,0,0,0,1};
+
+    Scanner scn = new Scanner(System.in);
+    System.out.println("Enter 8 char key");
+    String _8charString = scn.nextLine();
 
     Permutations perm = new Permutations();
     Shifts shift = new Shifts();
 
-    byte[] permuted = perm.Permute(input,perm.keyPermutation);
+    byte[] permuted = perm.Permute(shift.toBinary(_8charString),perm.keyPermutation);
    
     HashMap<String, byte[]> halve = shift.halve(permuted);
     left = halve.get("left");

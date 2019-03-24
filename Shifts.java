@@ -83,5 +83,32 @@ public static void Print(byte[] arr)
                 System.out.println("");
 }
 
+public static byte[] toBinary(String s){
+        String temp = s;
+        byte[] bytes = s.getBytes();
+        
+        StringBuilder binary = new StringBuilder();
+        for (byte b : bytes)
+        {
+         int val = b; 
+         for (int i = 0; i < 8; i++) 
+         {
+            binary.append((val & 128) == 0 ? 0 : 1);
+            val <<= 1; 
+         }
+        binary.append(' ');
+        }
+        byte [] returns = new byte[binary.length()];
+        for(int i=0;i<binary.length();i++)
+        {
+            if(binary.charAt(i) == '0')
+                returns[i] = 0;
+            else
+                returns[i] = 1;
+        }
+        
+      return returns;
+    } 
+
     
 }
