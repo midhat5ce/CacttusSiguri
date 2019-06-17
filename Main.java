@@ -9,6 +9,8 @@ public class Main{
     
     byte[] round = {1,1,2,2,2,2,2,2,1,2,2,2,2,2,2,1};
 
+	
+	
     byte[] left;
     byte[] right;
 
